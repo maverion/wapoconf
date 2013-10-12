@@ -12,35 +12,47 @@ h3 { font-size: 18px; }
 h5 { font-size: 14px; margin: 10px 0 0 0; }
 h6 { color: #6a6a6a; font-size: 12px; }
 
-/** LINKS */
+/******************************************
+ * LINKS 
+ ******************************************/
 a, h5 { color: #005b88; text-decoration: none; }
 a:hover,
 h5:hover { color: #6a6a69; }
 h5 { cursor: pointer; }
 
 
-/** SECTIONS */
+/******************************************
+ * SECTIONS 
+ ******************************************/
 #intro { background: #005b88; color: #fff; padding: 50px 15px; }
 #time  { background: #222; color: #fff; padding: 10px 15px; }
 
-/** LISTS */
+/******************************************
+ * LISTS 
+ ******************************************/
 li { border-top: 1px solid #e1e1e1; list-style: none; font-size: 24px; padding: 12px 15px 15px 15px; }
-
-/** IMAGES */
-.image-holder { float: right; height: 60px; margin: 3px 0 0 0; overflow: hidden; width: 60px; }
-    .image-holder img { width: 60px; }
-
-/** MARGINS AND PADDING */
-.margin-top-10 { margin-top: 10px; }
-
-/** OVERRIDES */
-h1, h3, h6, p, ul { margin: 0; padding: 0; }
-
-/** TALKS HACK */
 .talks { display: none; margin-top: 15px; margin-bottom: -15px; }
 .talks li { font-size: 14px; padding-left: 0; }
 
-/** CLEARFIX */
+/******************************************
+ * IMAGES 
+ ******************************************/
+.image-holder { float: right; height: 60px; margin: 3px 0 0 0; overflow: hidden; width: 60px; }
+    .image-holder img { width: 60px; }
+
+/******************************************
+ * MARGINS AND PADDING 
+ ******************************************/
+.margin-top-10 { margin-top: 10px; }
+
+/******************************************
+ * OVERRIDE 
+ ******************************************/
+h1, h3, h6, p, ul { margin: 0; padding: 0; }
+
+/******************************************
+ * CLEARFIX 
+ ******************************************/
 .cf:before,
 .cf:after { content: " "; display: table; }
 .cf:after { clear: both; }
