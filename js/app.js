@@ -1,42 +1,23 @@
-var storage = Tabletop.init( { 
-	key: '0Avy4Bvx3Cy0ZdEtWOUhVT1lEelNqQUpuc0d6Zm1pc0E',
-	wait: true
-} );
-
-var Meet = Backbone.Model.extend( {
-	idAttribute: 'name',
-	tabletop: {
-		instance: storage,
-		sheet: 'meet'
-	},
-	sync: Backbone.tabletopSync
-} );
-
-var MeetCollection = Backbone.Collection.extend( {
-	model: Meet,
-	tabletop: {
-		instance: storage,
-		sheet: 'meet'
-	},
-	sync: Backbone.tabletopSync
-} );
-
-var MeetView = Backbone.View.extend( {
-	tagname: 'div',
-	template: _.template( $( '#meet-template' ).html() ),
-	render: function() {
-		$( this.el ).html( this.template( { people: this.model.toJSON() } ) );
-		return this;
-	}
-} );
-
 $( document ).ready( function () {
-	var meet = new MeetCollection();
-	meet.fetch( { success: showInfo } );
+    Tabletop.init( { 
+        key: '0Avy4Bvx3Cy0ZdEtWOUhVT1lEelNqQUpuc0d6Zm1pc0E',
+        callback: showInfo,
+        simpleSheet: true 
+    } );
 } );
 
-function showInfo( meet ) {
-	var meetview = new MeetView( { model: meet } );
-	$( '#meet-us' ).append( meetview.render().el );
+function showInfo( data, tabletop ) {
+    var source   = $( '#meet-template' ).html();
+    var template = Handlebars.compile( source );
+
+    $.each( tabletop.sheets( 'meet' ).all(), function( i, person ) {
+        var html = template( person );
+        $( '#meet-us' ).append( html );
+    } );
 }
 
+$( document ).on( 'click', '.talks-open', function () {
+	$( this ).parent().next( '.talks' ).toggle( function() {
+   		$( this ).animate( { }, 500 );
+   	} );
+} );

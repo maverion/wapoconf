@@ -17,26 +17,26 @@
 	<div id="time">
 		<p>3 p.m. - 4, Thur and Fri at the hotel bar</p>
 	</div>
-	<div id="meet-us"></div>
+	<ul id="meet-us"></ul>
 </div>
 <script id="meet-template" type="text/html">
-<ul>
-	<% _.each( people, function( person ) { %>
-		<li class="cf">
-			<div class="image-holder"><img alt="<%= person.name %>" src="<%= person.photo %>"></div>
-			<h3><%= person.name %> <a alt="<%= person.name %> on twitter" href="http://twitter.com/<%= person.twitter %>"><i class="icon-twitter"></i></a></h3>
-			<h6><%= person.position %></h6>
-		</li>
-	<% } ); %>
-</ul>
+	<li class="cf">
+		<div class="image-holder"><img alt="{{ name }}" src="{{ photo }}"></div>
+		<h3>{{ name }} <a alt="{{ name }} on twitter" href="http://twitter.com/{{ twitter }}"><i class="icon-twitter"></i></a></h3>
+		<h6>{{ position }}</h6>
+		{{# if talk1 }}
+			<h5><a class="talks-open" href="javascript:void(0);">See my talks <i class="icon-chevron-down"></i></a></h5>
+			<ul class="talks">
+				<li><a alt="{{ talk1 }}" href="{{ talk1link }}">{{ talk1 }}</a></li>
+				{{# if talk2 }}<li><a alt="{{ talk2 }}" href="{{ talk2link }}">{{ talk2 }}</a></li>{{/ if }}
+				{{# if talk3 }}<li><a alt="{{ talk3 }}" href="{{ talk3link }}">{{ talk3 }}</a></li>{{/ if }}
+			</ul>
+		{{/ if }}
+	</li>
 </script>
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
-<script src="<?php WPONA::get_directory(); ?>/js/lib/tabletop/backbone.tabletopSync.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.rc.2/handlebars.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.1.0/tabletop.min.js"></script>
 <script src="<?php WPONA::get_directory(); ?>/js/app.js"></script>
-
 </body>
 </html>

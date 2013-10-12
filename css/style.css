@@ -9,11 +9,14 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
  ******************************************/
 h1 { font-size: 82px; line-height: 82px; }
 h3 { font-size: 18px; }
+h5 { font-size: 14px; margin: 10px 0 0 0; }
 h6 { color: #6a6a6a; font-size: 12px; }
 
 /** LINKS */
-a { color: #005B88; text-decoration: none; }
-a:hover { color: #6a6a69; }
+a, h5 { color: #005b88; text-decoration: none; }
+a:hover,
+h5:hover { color: #6a6a69; }
+h5 { cursor: pointer; }
 
 
 /** SECTIONS */
@@ -27,9 +30,15 @@ li { border-top: 1px solid #e1e1e1; list-style: none; font-size: 24px; padding: 
 .image-holder { float: right; height: 60px; margin: 3px 0 0 0; overflow: hidden; width: 60px; }
     .image-holder img { width: 60px; }
 
+/** MARGINS AND PADDING */
+.margin-top-10 { margin-top: 10px; }
 
 /** OVERRIDES */
 h1, h3, h6, p, ul { margin: 0; padding: 0; }
+
+/** TALKS HACK */
+.talks { display: none; margin-top: 15px; margin-bottom: -15px; }
+.talks li { font-size: 14px; padding-left: 0; }
 
 /** CLEARFIX */
 .cf:before,
