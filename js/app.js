@@ -18,8 +18,6 @@ function showInfo( data, tabletop ) {
 
 $( document ).on( 'click', '.talks-open', function () {
 	$( this ).parent().next( '.talks' ).toggle( function() {
-		var t = $(window).scrollTop();$(window).scrollTop(t+150);
    		$( this ).animate( { }, 500 );
    	} );
-   	
 } );
