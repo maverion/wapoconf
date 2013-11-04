@@ -26,10 +26,14 @@
 <script id="people-template" type="text/html">
  	<% _.each( people, function( person ) { %>
  	<li class="cf">
+ 		<% if ( person.photo ) { %>
  		<div class="image-holder"><img alt="<%= person.name %>" src="<%= person.photo %>"></div>
+ 		<% } %>
  		<h3>
- 			<%= person.name %> 
+ 			<%= person.name %>
+ 			<% if ( person.twitter ) { %>
  			<a alt="<%= person.name %> on twitter" href="http://twitter.com/<%= person.twitter %>"><i class="icon-twitter"></i></a>
+ 			<% } %>
  		</h3>
  		<h6><%= person.position %></h6>
  		<% if ( person.talk1 ) { %>
@@ -42,22 +46,6 @@
  		<% } %>
  	</li>
  	<% } ); %>
-</script>
-
-<script id="meet-template2" type="text/html">
-	<li class="cf">
-		<div class="image-holder"><img alt="{{ name }}" src="{{ photo }}"></div>
-		<h3>{{ name }} <a alt="{{ name }} on twitter" href="http://twitter.com/{{ twitter }}"><i class="icon-twitter"></i></a></h3>
-		<h6>{{ position }}</h6>
-		{{# if talk1 }}
-			<h5><a class="talks-open" href="javascript:void(0);">See my talks <i class="icon-chevron-down"></i></a></h5>
-			<ul class="talks">
-				<li><a alt="{{ talk1 }}" href="{{ talk1link }}">{{ talk1 }}</a></li>
-				{{# if talk2 }}<li><a alt="{{ talk2 }}" href="{{ talk2link }}">{{ talk2 }}</a></li>{{/ if }}
-				{{# if talk3 }}<li><a alt="{{ talk3 }}" href="{{ talk3link }}">{{ talk3 }}</a></li>{{/ if }}
-			</ul>
-		{{/ if }}
-	</li>
 </script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
