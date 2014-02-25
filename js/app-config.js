@@ -1,5 +1,5 @@
 var config = {
-	conference: "SND",
+	conference: "NICAR 2014",
 	meeting: "",
-	key: "0Avy4Bvx3Cy0ZdHNyN2dPZV9PMFFpS21INVdBVWRVa3c"
+	key: "0Av3AjVLfhKFudFhCemxGWjJGYWxaLTFnZFQ3TUJVWGc"
 }
